@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te Amoooo MUCHO MAS</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 5em;
+      color: #ff3366;
+      margin-top: 50px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .gallery video {
+      width: 300px;
+      height: auto;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery video:hover {
+      transform: scale(1.05);
+    }
+    .center-image {
+      margin-top: 30px;
+    }
+    .center-image img {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .center-image img:hover {
+      transform: scale(1.05);
+    }
+    .music-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .music-button:hover {
+      background-color: #e62e5c;
+    }
+  </style>
+</head>
+<body>
+  <h1>TE AMOOOOO MUCHO MAASSS 💖</h1>
+
+  <!-- Audio oculto -->
+  <audio id="background-audio" loop>
+    <source src="mi_vida_entera.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Botón para iniciar la música -->
+  <button class="music-button" onclick="document.getElementById('background-audio').volume = 0.2; document.getElementById('background-audio').play()">🎵 Tu canción</button>
+
+  <!-- Galería de videos -->
+  <div class="gallery">
+    <video autoplay muted loop>
+      <source src="video1-video.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop>
+      <source src="video2-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Imagen centrada -->
+  <div class="center-image">
+    <img src="Image (1).jpg" alt="Foto especial">
+  </div>
+</body>
+</html>
