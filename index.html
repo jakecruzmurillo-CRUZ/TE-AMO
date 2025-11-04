@@ -64,6 +64,7 @@
       border-radius: 12px;
       cursor: pointer;
       margin: 5px;
+      transition: background-color 0.3s;
     }
     .music-button:hover {
       background-color: #e62e5c;
@@ -79,10 +80,9 @@
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <!-- Botones para controlar la música -->
+  <!-- Botón único para controlar la música -->
   <div class="music-buttons">
-    <button class="music-button" onclick="playMusic()">🎵 Tu canción</button>
-    <button class="music-button" onclick="pauseMusic()">⏸️ Pausa</button>
+    <button id="toggle-music" class="music-button">🎵 Tu canción</button>
   </div>
 
   <!-- Galería de videos -->
@@ -105,15 +105,18 @@
   <!-- Script -->
   <script>
     const audio = document.getElementById('background-audio');
+    const toggleButton = document.getElementById('toggle-music');
 
-    function playMusic() {
-      audio.volume = 0.2;
-      audio.play();
-    }
-
-    function pauseMusic() {
-      audio.pause();
-    }
+    toggleButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.volume = 0.2;
+        audio.play();
+        toggleButton.textContent = '⏸️ Pausa';
+      } else {
+        audio.pause();
+        toggleButton.textContent = '🎵 Tu canción';
+      }
+    });
   </script>
 </body>
 </html>
